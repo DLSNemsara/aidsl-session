@@ -26,6 +26,6 @@ async def generate_openapi(request: UserInstruction):
         message=f"Generate OpenAPI specs for the following instruction. Just putout the spec in markdown yaml. don't give any other comments: {request.user_instruction}"
     )
     
-    openapi_specs = response.text
+    openapi_spec = response.text
     return {"openapi_specs": openapi_spec}
     
