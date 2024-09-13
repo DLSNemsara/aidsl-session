@@ -21,9 +21,8 @@ def read_root():
 @app.post("/generate_openapi")
 async def generate_openapi(request: UserInstruction):
     response = co.chat(
-        message=f"""
-hello how are you doing?
-        """
+        message=f"""Generate OpenAPI specs for the following instruction.. 
+        Just putout the spec in markdown yaml. don't give any other comments: {request.user_instruction}"""
     )
 
     openapi_spec = response.text
